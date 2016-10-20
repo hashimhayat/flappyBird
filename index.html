@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>flappy</title>
+    <script src="libraries/p5.js" type="text/javascript"></script>
+
+    <script src="libraries/p5.dom.js" type="text/javascript"></script>
+    <script src="libraries/p5.sound.js" type="text/javascript"></script>
+    <link href="css/model.css"  type="text/css" rel="stylesheet" />
+
+    <script src="sketch.js" type="text/javascript"></script>
+
+    <style> body {padding: 0; margin: 0;} canvas {vertical-align: top;} 
+      #startButton, #restartButton {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+      }
+
+    </style>
+  </head>
+  <body>
+
+        <button id="myBtn">Documentation</button>
+      <div id="myModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">x</span>
+      <h2 class="p1"><strong>Documentation</strong></h2>
+      <p class="p1"><span class="s1">Creating your all favorite game is always feels amazing. For assignment 3, I decided to take a step ahead from the chase game v1.0 that displayed my favorite red bird, the angry bird, to a more crazy one: Flappy Bird.</span></p>
+      <p class="p2"><strong>Who is Flappy Bird?</strong></p>
+      <p class="p1"><span class="s1">Flappy Bird is a bird that follows the law of gravity more than anything else on a computer screen. The bird tends to fall down unless the player keeps it flying. The bird loves to gather coins that are floating on the sky. However, its biggest fear are the columns shaped hurdles that comes in its way.</span></p>
+      <p class="p1"><span class="s1"><strong>Design Features:</strong></span></p>
+      <p class="p1"><span class="s1">Unlike the Angry Bird in the chase game v1.0, Flappy Bird is created using advanced OOP approach. Everything that the player sees on the screen is an object that has its on attributes and methods that maintains its functionality.</span></p>
+      <p class="p1"><span class="s1"><strong>The Game Class - Backbone</strong></span></p>
+      <p class="p1"><span class="s1">The game class is the backbone of this game. It keep tracks of all the instances and functionality of the game. It keeps it running when the Flappy Bird is doing well and stops it when Flappy dies. The game class is responsible for the motion on the screen. More on it later.</span></p>
+      <p class="p2"><strong>Use of Dynamic Arrays</strong></p>
+      <p class="p1"><span class="s1">Dynamic Arrays are always lovely because you don&rsquo;t have to initiate them with a specific length. They grow as you grow. In this game, I am using two arrays: Platforms and Coins. These arrays store the randomly generated instances of Platforms or Hurdles and Coins. These arrays are later used by the Game Class to keep track of what is going on with each instance. This approach is also good as it saves hard coding or reading from a file, things that take time and computer scientists are lazy.</span></p>
+      <p class="p1"><span class="s1"><strong>Functions</strong></span></p>
+      <p class="p1"><span class="s1">Guess what does <em>flappy.jump(); </em>do? I know that was easy as the function itself tells all about its functionality. In this game as everything is an object, it has its methods that easily do things that would take a lot of effort and lines of code. Yes, functions are used to make the code neat and reuse code.</span></p>
+      <p class="p2"><strong>HTML &amp; CSS</strong></p>
+      <p class="p1"><span class="s1">Using HTML and CSS with p5.js, I have extended the functionality of the game, making it look professional. The buttons and the gravity slider are HTML elements, beautified by CSS, and operated by javaScript. </span></p>
+      <p class="p2"><strong>Physical Interface</strong></p>
+      <p class="p1"><span class="s1">Physical Interfaces are fun when it comes to games. In an interactive class, a group of us created a physical controller that uses a very different approach to manage key presses by the user. The interface uses different shapes drawn on pieces of paper with graphite pencil and Makey Makey. As the user touches one of the images on the paper, a circuit gets complete and the character moves in a particular direction. The user has to wear a conductive band to be part of the physical interface. </span></p>
+      <img src="/~hh1316/interactive/assignment03/doc/image1" alt="Physical" style="width:304px;height:228px;">
+      <img src="/~hh1316/interactive/assignment03/doc/image2" alt="Mountain View" style="width:304px;height:228px;">
+      <img src="/~hh1316/interactive/assignment03/doc/image3" alt="Mountain View" style="width:304px;height:228px;">
+      <img src="/~hh1316/interactive/assignment03/doc/image4" alt="Mountain View" style="width:304px;height:228px;">
+      </div>
+    </div>
+
+    <script>
+      // Get the modal
+      var modal = document.getElementById('myModal');
+
+      // Get the button that opens the modal
+      var btn = document.getElementById("myBtn");
+
+      // Get the <span> element that closes the modal
+      var span = document.getElementsByClassName("close")[0];
+
+      // When the user clicks the button, open the modal
+      btn.onclick = function() {
+          modal.style.display = "block";
+      }
+
+      // When the user clicks on <span> (x), close the modal
+      span.onclick = function() {
+          modal.style.display = "none";
+      }
+
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function(event) {
+          if (event.target == modal) {
+              modal.style.display = "none";
+          }
+      }
+    </script>
+
+    <button id="startButton" name="startButton" onclick="onClickStart(); return false;">Play</button>
+    <button id="restartButton" name="restartButton" onclick="onClickRestart(); return false;">New Game</button>
+    <td><input type="range" id="range1" min="1" max="10" step="1" value="100" oninput="updateRange(this);" onchange="updateRange(this);"></td>
+  </body>
+</html>
